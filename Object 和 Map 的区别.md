@@ -4,6 +4,7 @@ Object: 是最常用的一种引用类型数据，可用于存储键值对的集
 Map: 是键值对的集合，采用 Hash 结构存储，在 ES6 版本里新增的
 共同点：键值对的动态集合，支持增加和删除键对
 Object: 
+
 ```JavaScript
   //定义
   const obj = {
@@ -15,6 +16,7 @@ Object:
   //删除键值对
   delete obj.c;
 ```
+
 Map:
 ```JavaScript
 //定义
@@ -25,6 +27,7 @@ map.set('b', 2);
 //删除键值对
 map.delete('a');
 ```
+
 不同点
 
 ```JavaScript
@@ -39,7 +42,9 @@ const obj = {
 const o = new Object();
 const o2 = Object.create();
 ```
+
 Map:
+
 ```JavaScript
 //构造方法
 const m = new Map();
@@ -48,8 +53,10 @@ const m2 = new Map([
      ['b', '2']   
 ])
 ```
+
 键的类型
 Object：键的类型必须是String或者Symbol，如果非String类型，会进行数据类型转换
+
 ```JavaScript
 const obj2 = {
     a: 1,
@@ -63,8 +70,10 @@ obj2[arr1] = 'arr';  //obj2
                      //obj
                      //{3: 33, a: 1, 1,2:'arr'}  
                      ```
+                     
 Map：可以是任意类型，包括对象，数组，函数等，不会进行类型转换。
 在添加键值对时，会通过严格相等(===)来判断键属性是否已存在
+
 ```JavaScript
 const map2 = new Map();
 map2.set('a', 1);
@@ -76,6 +85,7 @@ map2.set(arr1, 'arr');
 //2:{2 => 2}
 //3:{Array(2) => "arr"}
 ```
+
 特例：NaN
 ```JavaScript
 NaN === NaN  //false
@@ -93,6 +103,7 @@ Object：key是无序的，不会按照添加的顺序返回
 3. 对于Symbol类型，会直接过滤掉，不会进行输出，
 如果想要输出Symbol类型属性，
 通过Object.getOwnPropertySymbols()方法
+
 ```JavaScript
 const obj3 = {
     2: 2,
@@ -108,6 +119,7 @@ Object.keys(obj3) //['0', '1', '2','b', '1.1', 'a']
 ```
 
 Map：key是有序的，按照插入的顺序进行返回
+
 ```JavaScript
 const map3 = new Map();
 map3.set(2, 2);
@@ -141,8 +153,10 @@ map4.set('1', 1);
 map4.set('b', 'b');
 map.size; //3
 ```
+
 键值对访问
 Object:
+
 ```JavaScript
 //1.添加或者修改属性，通过点或者中括号的形式
 const obj5 = {};
